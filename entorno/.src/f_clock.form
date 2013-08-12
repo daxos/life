@@ -1,0 +1,13 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,36,34)
+  Mask = True
+  Border = False
+  SkipTaskbar = True
+  { Timer2 #Timer
+    #MoveScaled(25,4)
+  }
+  { Timer1 #Timer
+  }
+}

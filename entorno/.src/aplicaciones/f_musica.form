@@ -1,0 +1,61 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,149,75)
+  Background = &HEBEBEB&
+  Border = False
+  SkipTaskbar = True
+  { FileView1 FileView
+    MoveScaled(69,0,80,76)
+    Background = &HE2E2E2&
+    Border = False
+    Mode = Select.Single
+    Dir = "~/"
+    ShowDirectory = True
+    ShowPreview = True
+  }
+  { btnplay ToolButton
+    MoveScaled(28,42,10,9)
+    Picture = Picture["Imagenes/playb.png"]
+  }
+  { btnpause ToolButton
+    MoveScaled(28,42,10,9)
+    Visible = False
+    Picture = Picture["Imagenes/pauseb.png"]
+  }
+  { !btnnext ToolButton
+    MoveScaled(44,42,12,10)
+    #Public = True
+    Picture = Picture["Imagenes/nextb.png"]
+  }
+  { before ToolButton
+    MoveScaled(10,43,11,7)
+    Picture = Picture["Imagenes/previousb.png"]
+  }
+  { musicaimg PictureBox
+    MoveScaled(18,16,31,24)
+    Picture = Picture["images/musics.png"]
+    Alignment = Align.Center
+  }
+  { dwgMoviePlayer DrawingArea
+    MoveScaled(1,49,16,17)
+    Visible = False
+    Enabled = False
+    Background = &HEBEBEB&
+    Arrangement = Arrange.Fill
+    Cached = True
+    Focus = True
+  }
+  { timShow #Timer
+    Delay = 500
+  }
+  { cerrar ToolButton
+    MoveScaled(55,70,13,4)
+    Text = ("Cerrar")
+    Picture = Picture["icon:/32/halt"]
+  }
+  { MovieBox1 MovieBox
+    MoveScaled(18,13,31,26)
+    Path = "images/a.gif"
+  }
+}

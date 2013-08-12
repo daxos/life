@@ -1,0 +1,14 @@
+# Gambas Project File 3.0
+# Compiled with Gambas 3.4.2
+Title=Life Launcher
+Startup=claseinicio
+Version=0.0.26
+Component=gb.image
+Component=gb.qt4
+Component=gb.form
+Component=gb.qt4.webkit
+Component=gb.web
+TabSize=2
+ControlPublic=1
+ModulePublic=1
+Packager=1

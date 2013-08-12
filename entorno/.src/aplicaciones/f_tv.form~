@@ -1,0 +1,20 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,153,79)
+  Background = &H1F1F1F&
+  Border = False
+  { IconView1 IconView
+    MoveScaled(27,22,100,59)
+    Background = &H1F1F1F&
+    Foreground = &HFFFFFF&
+    GridSize = 30
+    Border = False
+  }
+  { Label1 Label
+    MoveScaled(7,1,79,9)
+    Font = Font["Ubuntu,+14"]
+    Foreground = &HFFFFFF&
+    Text = ("TV")
+  }
+}

@@ -1,0 +1,67 @@
+' Gambas class file
+
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+Dim titulos As Boolean
+  
+  m_kernel.leer_wallpaper(f_camfondo.GridView2, titulos)
+  Me.Center
+  GridView2.rows.count = 10000
+  GridView2.Columns.count = 2
+  GridView2.Rows.Height = 35
+'GridView1.Picture[0, 0] = Picture.load("gmail.png")
+  IconView1.GridSize = 0
+  IconView1.IconLines = 0
+  Label1.SetFocus
+  
+
+End
+
+
+Public Sub elgdirectorio_Click()
+Dim titulos As Boolean
+  Dialog.Title = "Archivo de Imagenes"
+Dialog.Path = Application.Path 
+If Dialog.SelectDirectory() Then
+  Return 
+Endif
+
+FileView1.Dir = Dialog.Path
+TextBox1.Text = Dialog.Path
+m_kernel.leer_wallpaper(f_camfondo.GridView2, titulos)
+FileView1.Show
+elgdirectorio.Hide
+Label1.Hide
+
+
+End
+
+Public Sub IconView1_Click()
+
+  PictureBox2.Picture = Picture.Load(IconView1.Current.Text)
+  TextBox2.Text = IconView1.Current.Text
+
+End
+
+Public Sub aplicar_Click()
+  
+  f_fondo.Pic_Fondo.Picture = Picture.Load(FileView1.Dir & "/" & FileView1.Current)
+  Me.Close
+
+End
+
+Public Sub cerrar_Click()
+
+  Me.Close
+
+End
+
+Public Sub FileView1_Click()
+
+  PictureBox2.Picture = Picture.Load(FileView1.Dir & "/" & FileView1.Current)
+  TextBox2.Text = FileView1.Dir & "/" & FileView1.Current
+
+End

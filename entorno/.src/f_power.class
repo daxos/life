@@ -1,0 +1,18 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+Label2.SetFocus
+
+End
+
+Public Sub salir_Click()
+
+  f_aplicaciones.Close
+  f_clock.Close
+  f_panel.Close
+  f_power.Close
+  f_fondo.Close
+
+End

@@ -1,0 +1,28 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+  Me.Center
+
+End
+
+
+
+Public Sub cerrar_Click()
+
+  Me.Close
+
+End
+
+Public Sub configurar_Click()
+
+  Shell "gksudo gedit /etc/ssmtp/ssmtp.conf "
+
+End
+
+Public Sub mandarcorreo_Click()
+
+ Shell " echo " & TextArea1.Text & " | mail -s " & TextBox2.Text & " " & TextBox1.Text
+
+End

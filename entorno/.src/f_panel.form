@@ -1,0 +1,36 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,117,10)
+  Background = &H2C2C2C&
+  Border = False
+  SkipTaskbar = True
+  { PictureBox2 PictureBox
+    MoveScaled(0,0,119,10)
+    Picture = Picture["images/panel.png"]
+  }
+  { apagar ToolButton
+    MoveScaled(104,0,9,9)
+    Picture = Picture["icon:/48/quit"]
+  }
+  { aplicaciones ToolButton
+    MoveScaled(4,0,10,9)
+    Picture = Picture["images/daxos_icon_64x64.png"]
+  }
+  { Label1 Label
+    MoveScaled(86,3,15,4)
+    Font = Font["Ubuntu,+5"]
+    Foreground = &H2A2B2B&
+    Text = (" .")
+  }
+  { Panel1 Panel
+    MoveScaled(74,0,10,9)
+    Visible = False
+    Background = &HECECEC&
+    { PictureBox1 PictureBox
+      MoveScaled(1,1,8,7)
+      Background = &H202020&
+      Picture = Picture["images/firefox.png"]
+    }
+  }
+}

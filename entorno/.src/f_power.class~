@@ -1,0 +1,14 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+Label2.SetFocus
+
+End
+
+Public Sub salir_Click()
+
+  Me.Close
+
+End

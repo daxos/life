@@ -1,0 +1,29 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+Panel1.SetFocus
+
+End
+
+Public Sub apagar_Click()
+
+If f_power.Visible = False Then
+f_panel.Hide
+f_power.Show
+f_panel.Show
+Else
+  f_power.Hide
+  Endif
+End
+
+Public Sub aplicaciones_Click()
+
+If f_aplicaciones.Visible = True Then
+  f_aplicaciones.Visible = False
+  Else
+    f_aplicaciones.Show
+Endif
+
+End

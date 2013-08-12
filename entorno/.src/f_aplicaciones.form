@@ -1,0 +1,47 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,149,92)
+  Background = &H1F1F1F&
+  Border = False
+  SkipTaskbar = True
+  { IconView1 IconView
+    MoveScaled(8,16,135,71)
+    Background = &H1F1F1F&
+    Foreground = &HFFFFFF&
+    GridSize = 35
+    IconLines = 3
+    Border = False
+  }
+  { Timer1 #Timer
+    #MoveScaled(101,1)
+  }
+  { Panel1 Panel
+    MoveScaled(0,0,149,10)
+    Background = &HDFDFDF&
+    { relojtxt Label
+      MoveScaled(110,3,36,4)
+      Font = Font["Ubuntu,+7"]
+      Foreground = &H1F1F1F&
+    }
+    { Label1 Label
+      MoveScaled(7,3,36,4)
+      Font = Font["Ubuntu,+7"]
+      Foreground = &H1F1F1F&
+      Text = ("Mis aplicaciones")
+    }
+  }
+  { apps1 Button
+    MoveScaled(130,86,4,4)
+    Enabled = False
+    Text = ("1")
+  }
+  { apps2 Button
+    MoveScaled(135,86,4,4)
+    Text = ("2")
+  }
+  { WebView1 WebView
+    MoveScaled(-1,9,150,83)
+    Visible = False
+  }
+}

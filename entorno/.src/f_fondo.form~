@@ -1,0 +1,11 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,144,74)
+  Picture = Picture["images/dandelion_flower-1920x1080.jpg"]
+  Border = False
+  Maximized = True
+  Sticky = True
+  SkipTaskbar = True
+  Arrangement = Arrange.Vertical
+}

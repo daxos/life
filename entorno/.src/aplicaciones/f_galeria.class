@@ -1,0 +1,81 @@
+' Gambas class file
+
+
+Public Sub _new()
+
+End
+
+Public Sub Form_Open()
+
+Me.Center
+PictureBox1.SetFocus
+DirView1.SetFocus
+hbox1.SetFocus
+
+End
+
+Public Sub abrir_Click()
+
+hbox2.Show
+DirView1.Show
+FileView1.Show
+PictureBox1.Hide
+
+End
+
+Public Sub anterior_Click()
+
+PictureBox1.Picture.Fill(&HE9E9E9&)
+
+End
+
+Public Sub siguiente_Click()
+
+Dim numero As String
+
+numero = FileView1.Count
+'FileView1.Current
+'PictureBox1.Picture = Picture.Load(DirView1.Current & "/" & FileView1.Current)
+
+End
+
+Public Sub cerrar_Click()
+
+Me.Close
+
+End
+
+Public Sub pantallcom_Click()
+If Me.Height = 486 Then
+  Me.Height = 686
+  Me.Width = 986
+  Me.Center
+ Else
+  Me.Height = 486
+  Me.Width = 786
+  Me.Center
+ Endif 
+
+End
+
+Public Sub DirView1_Click()
+
+ FileView1.Dir = DirView1.Current
+ FileView1.Refresh
+
+End
+
+Public Sub FileView1_DblClick()
+
+Dim imagen As String
+imagen = DirView1.Current & "/" & FileView1.Current
+FileView1.Hide
+DirView1.Hide  
+PictureBox1.Show
+hbox2.Hide
+Print DirView1.Current & "/" & FileView1.Current
+PictureBox1.Picture = Picture.Load(imagen)
+hbox1.SetFocus
+
+End
+

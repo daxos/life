@@ -1,0 +1,51 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+  Me.Center
+
+IconView1.Add("1", "Antena 3", Picture["images/Logo-Antena-3.png"])
+IconView1.Add("2", "Mi tele", Picture["images/mitele.png"])
+IconView1.Add("3", "RTVE", Picture["images/rtve_logo1.jpg"])
+
+
+End
+
+Public Sub IconView1_Click()
+
+   Dim titulos As Boolean
+ Dim video As String 
+ 
+   If Not IsNull(IconView1.Current) Then
+    Select Case IconView1.Current.Key
+     Case 1
+     f_navegador.Visible = True
+     IconView1.UnselectAll
+     f_tv.Hide
+     f_navegador.WebView1.Url = "http://www.antena3.com/videos/"
+     WebSettings[WebSettings.PluginsEnabled] = True
+     Case 2
+       f_editor.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+      Case 3
+       f_editor.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+      Case 4
+       f_tv.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+       Case 6
+       f_video.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+     
+   End Select
+        Endif
+
+End

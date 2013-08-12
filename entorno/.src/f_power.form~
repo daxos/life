@@ -1,0 +1,44 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,117,41)
+  Background = &HE4E4E4&
+  Border = False
+  SkipTaskbar = True
+  { salir ToolButton
+    MoveScaled(12,14,13,13)
+    Picture = Picture["icon:/96/undo"]
+  }
+  { Label1 Label
+    MoveScaled(19,29,8,4)
+    Font = Font["+1"]
+    Text = ("Salir")
+  }
+  { Label2 Label
+    MoveScaled(38,29,15,4)
+    Font = Font["+1"]
+    Text = ("Bloquear")
+  }
+  { bloquear ToolButton
+    MoveScaled(36,14,13,13)
+    Picture = Picture["icon:/128/unlock"]
+  }
+  { reiniciar ToolButton
+    MoveScaled(61,15,13,13)
+    Picture = Picture["icon:/96/refresh"]
+  }
+  { Label3 Label
+    MoveScaled(64,29,14,4)
+    Font = Font["+1"]
+    Text = ("Reiniciar")
+  }
+  { Label4 Label
+    MoveScaled(89,29,12,4)
+    Font = Font["+1"]
+    Text = ("Apagar")
+  }
+  { apagar ToolButton
+    MoveScaled(85,15,14,13)
+    Picture = Picture["icon:/96/quit"]
+  }
+}

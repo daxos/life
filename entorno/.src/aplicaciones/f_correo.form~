@@ -1,0 +1,59 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,111,82)
+  Background = &HDFDFDF&
+  Border = False
+  { TextArea1 TextArea
+    MoveScaled(7,22,96,46)
+    Background = &HDFDFDF&
+    Wrap = True
+    Border = False
+  }
+  { Panel1 Panel
+    MoveScaled(0,72,111,10)
+    Background = &HDADADA&
+    { configurar ToolButton
+      MoveScaled(25,1,9,8)
+      ToolTip = ("Configurar cuenta")
+      Picture = Picture["icon:/48/options"]
+    }
+    { mandarcorreo ToolButton
+      MoveScaled(6,1,10,8)
+      ToolTip = ("Mandar email")
+      Picture = Picture["icon:/48/mail"]
+    }
+    { cerrar ToolButton
+      MoveScaled(99,1,7,8)
+      Picture = Picture["icon:/48/halt"]
+    }
+  }
+  { TextBox1 TextBox
+    MoveScaled(20,2,83,6)
+    Background = &HDFDFDF&
+    Border = False
+  }
+  { TextBox2 TextBox
+    MoveScaled(20,11,80,6)
+    Background = &HDFDFDF&
+    Border = False
+  }
+  { Separator1 Separator
+    MoveScaled(0,7,112,4)
+  }
+  { Label1 Label
+    MoveScaled(7,3,8,4)
+    Font = Font["+3"]
+    Foreground = &H3F3F3F&
+    Text = ("Para")
+  }
+  { Label2 Label
+    MoveScaled(7,12,11,4)
+    Font = Font["+3"]
+    Foreground = &H3F3F3F&
+    Text = ("Asunto")
+  }
+  { Separator2 Separator
+    MoveScaled(-6,16,124,4)
+  }
+}

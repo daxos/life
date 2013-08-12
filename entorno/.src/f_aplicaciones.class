@@ -1,0 +1,129 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+Me.Center
+
+IconView1.Add("1", "Navegar por internet", Picture["images/firefox.png"])
+IconView1.Add("2", "Escribir documento", Picture["images/notepad.png"])
+IconView1.Add("3", "Mandar correo", Picture["images/mail.png"])
+IconView1.Add("4", "Ver la televisión", Picture["images/tv.png"])
+IconView1.Add("5", "Escuchar música", Picture["images/music.png"])
+IconView1.Add("6", "Ver vídeos", Picture["images/video.png"])
+Timer1.Enabled = True
+
+End
+
+Public Sub IconView1_Click()
+
+   Dim titulos As Boolean
+ Dim video As String 
+ 
+   If Not IsNull(IconView1.Current) Then
+    Select Case IconView1.Current.Key
+     Case 1
+     f_navegador.Show
+     IconView1.UnselectAll
+     f_aplicaciones.Hide
+     Case 2
+       f_editor.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+      Case 3
+       f_correo.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+      Case 4
+       f_tv.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+       Case 5
+       f_musica.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+       Case 6
+       If f_video.Visible = False Then
+       f_video.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       Else
+         f_video.Close
+         f_aplicaciones.Close
+       Endif  
+       
+       Case 7
+      ' f_galeria.Show
+      Shell "eog"
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+       Case 8
+       f_camfondo.Show
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+       
+       Case 9
+       f_navegador.Show
+       f_navegador.WebView1.URL = "http://kiosko.net/"
+       IconView1.UnselectAll
+       f_aplicaciones.Hide
+     
+    
+   End Select
+        Endif
+
+End
+
+Public Sub Timer1_Timer()
+
+  
+  Timer1.Delay = 1000
+
+relojtxt.Text = Format$(Now, "ddd ") & " " & Time(Hour(Now), Minute(Now), Second(Now)) 
+'lbldia.text = Format$(Now, "ddd ")
+
+End
+
+Public Sub relojtxt_MouseDown()
+
+If WebView1.Visible = True Then
+  WebView1.Hide
+  Else
+    WebView1.Show
+    WebView1.Url = "http://ptyapp.com/clock"
+Endif
+  
+
+End
+
+Public Sub apps2_Click()
+
+  apps1.Enabled = True
+  apps2.Enabled = False
+  IconView1.Clear
+  IconView1.Add("7", "Galeria", Picture["images/photo.png"])
+  IconView1.Add("8", "Cambiar fondo", Picture["images/background.png"])
+  IconView1.Add("9", "Leer noticias", Picture["images/news.png"])
+
+End
+
+Public Sub apps1_Click()
+
+  apps1.Enabled = False
+  apps2.Enabled = True
+  IconView1.Clear
+  Form_Open
+  
+
+End
+
+
+
+
+
+

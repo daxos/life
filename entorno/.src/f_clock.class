@@ -1,0 +1,121 @@
+' Gambas class file
+
+
+Private picHour As Image
+Private picMinute As Image
+Private picSecond As Image
+Private Clock As Image
+Private Buffer As Picture
+Private HE As Integer
+Private WI As Integer
+
+Private $MX As Integer
+Private $MY As Integer
+Private $hMenu As Menu
+
+
+Public Sub DrawTime()
+
+  Dim tmpImg As Image
+
+  Dim hPict As Image
+
+  WI = Clock.Width
+  HE = Clock.Height
+
+
+  hPict = Clock.Copy()
+
+    tmpImg = picHour.Rotate(- ((Hour(Now) * 60) + Minute(Now)) * Pi(1 / 360))    
+    hPict.PaintImage(tmpImg, WI / 2 - tmpImg.Width / 2, HE / 2 - tmpImg.Height / 2)
+    tmpImg = picMinute.Rotate(- Minute(Now) * Pi(2 / 60))
+    hPict.PaintImage(tmpImg, WI / 2 - tmpImg.Width / 2, HE / 2 - tmpImg.Height / 2)
+    tmpImg = picSecond.Rotate(- Second(Now) * Pi(2 / 60))
+    hPict.PaintImage(tmpImg, WI / 2 - tmpImg.Width / 2, HE / 2 - tmpImg.Height / 2)
+  'Draw.End
+  
+  Me.Picture = hPict.Picture
+  'Me.Mask = Not mnuShowWindow.Value
+
+End
+
+Private Sub SetClock(iClock As Integer)
+
+  Dim hImage As Image
+  Dim hBuffer As Image  
+  Dim hMenu As Menu
+  Dim X, Y As Integer
+  Dim iColor As Integer
+  Dim iGray As Integer
+
+  hImage = Image.Load("img_clock/clock.png")
+  
+
+  
+  Clock = hImage '.Picture
+  DrawTime
+  
+
+End
+
+
+Public Sub Form_Open()
+
+  picMinute = Image.Load("img_clock/arrow_min.png")
+  picHour = Image.Load("img_clock/arrow_hour.png")
+  picSecond = Image.Load("img_clock/arrow_sec.png")
+
+  SetClock(1)
+  Timer1.Enabled = True
+Me.TopOnly = Not Me.TopOnly
+f_clock.Tooltip = Format$(Now, "ddd ") & " " & Time(Hour(Now), Minute(Now), Second(Now)) 
+
+End
+
+Public Sub Timer1_Timer()
+
+  DrawTime()
+
+End
+
+
+Public Sub mnuClock_Click()
+
+  SetClock(Val(Last.Tag))
+
+End
+
+
+Public Sub mnuQuit_Click()
+
+  Me.Close
+
+End
+
+Public Sub mnuAbout_Click()
+
+  Message("Reloj Widget para Launcher EdulibreOs y DaxOs")
+
+End
+
+Public Sub Form_MouseDown()
+
+  $MX = Mouse.ScreenX - Me.X
+  $MY = Mouse.ScreenY - Me.Y
+  f_clock.Tooltip = Format$(Now, "ddd ") & " " & Time(Hour(Now), Minute(Now), Second(Now)) 
+  Form.Refresh
+
+End
+' 
+Public Sub Form_MouseMove()
+
+  If Mouse.Left Then Me.Move(Mouse.ScreenX - $MX, Mouse.ScreenY - $MY)
+
+End
+
+
+Public Sub form_DblClick()
+
+Me.Close
+
+End
